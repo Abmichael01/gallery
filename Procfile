@@ -1,1 +1,1 @@
-web: gunicorn recruitIT.wsgi:application --log-file -
+web: gunicorn gallery.wsgi:application --log-file -
