@@ -1,0 +1,34 @@
+{% extends "app/galleryBase.html" %}
+
+{% load static %}
+
+{% block container %}
+
+
+<link rel="stylesheet" href='{% static "css/folder.css" %}'>
+
+<div class="action">
+  <a href="{% url 'folders' %}" class="back"><<< {{folder.name}}</a>
+  <a href="{% url 'rename-folder' folder.pk %}" class="delete"> Rename Folder</a>
+  <a href="{% url 'delete-folder' folder.pk %}" class="delete">Delete Folder</a>
+</div>
+
+{% if not image_exists %}
+<p class="no-image">Sorry you do not any image in this folder <br> <a href="{% url 'upload' %}">+ Upload Image</a></p>
+{% endif %}
+
+
+<div class="gallery">
+  {% for image in images  %}
+  <a href="{% url 'image' image.id %}">
+    <div class="image">
+      <img src='{{image.image.url}}' alt="">
+      <p>{{image.tag}}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock container %}
+
+
+

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  Welcome
+{% endblock title %}
+
+{% block content %}
+
+<link rel="stylesheet" href='{% static "css/welcome.css" %}'>
+
+<div class="container">
+    <div class="hero">
+      <div class="image-slide">
+        <img src='{% static "images/bg2.jpg" %}' alt="image1" class="image">
+        <img src='{% static "images/bg7.jpg" %}' alt="image2" class="hide image">
+        <img src='{% static "images/bg4.jpg" %}' alt="image3" class="hide image">
+        <img src='{% static "images/bg16.jpg" %}' alt="image4" class="hide image">
+        <img src='{% static "images/bg15.jpg" %}' alt="image5" class="hide image">
+      </div>
+
+      <div class="info">
+        <h3>Eazily Upload, Save and Organize Your Images</h3>
+        <a href="{% url 'upload' %}"><button>Upload Image</button></a>
+      </div>
+      
+    </div>
+
+    <div class="features">
+      <h2>Features</h2>
+      <div class="cards">
+        <div class="card" >
+          <h3>User Gallery</h3>
+          <p>Create a personalized user dashboard where users can manage, organize, and view their saved images effortlessly.</p>
+        </div>
+        <div class="card" >
+          <h3>Custom Folder</h3>
+          <p>Create custom albums or folders for better organization of their images.</p>
+        </div>
+        <div class="card" >
+          <h3>Tags and Descriptions</h3>
+          <p>Enable users to add tags and descriptions to their images for easy search and categorization.</p>
+        </div>
+
+        <div class="card" >
+          <h3>Search Functionality</h3>
+          <p>A search feature, allowing users to quickly find specific images using keywords or tags.</p>
+        </div>
+        <div class="card" >
+          <h3>Easy To Use</h3>
+          <p>Theh UI was designed putting everyone into consideration. It is very easy to use. You do not need to take any course to navigate the website.</p>
+        </div>
+        <div class="card" >
+          <h3>Free For All</h3>
+          <p>The website is free for everyone. It costs you no amount to get started with using the website.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      let images = document.querySelectorAll('img')
+      currentImage = 2
+      
+      function slider(){
+        images.forEach((image)=>{
+
+          if( images[currentImage] == image){
+            image.style.display = 'block'
+            // image.classList.remove('hide')
+          }else{
+            image.style.display = 'none'
+            // image.classList.add('hide')
+          }
+
+          })
+
+        if(currentImage == (images.length - 1)){
+          currentImage = 0
+        }else{
+          currentImage++
+        }
+      }
+
+     setInterval(slider, 5000)
+    </script>
+</div>
+
+
+<div class="footer">
+  <p>EazyUpload By UrkelCodes</p>
+</div> 
+  
+{% endblock content %}

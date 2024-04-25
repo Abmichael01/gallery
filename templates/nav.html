@@ -1,0 +1,37 @@
+{% load static %}
+
+<link rel="stylesheet" href='{% static "css/nav.css" %}'>
+
+<header>
+    <a href='{% url "welcome" %}' class="logo">
+        <h1>EazyUpload</h1>
+    </a>
+
+    <nav>
+        {% if request.user.is_authenticated %}
+        <p> &#x263B;{{request.user.username}}</p>
+        <a href='{% url "gallery" %}'>Gallery</a>
+        <a href='{% url "upload" %}'>+ Upload Image</a>
+        <a href='{% url "logout" %}' class="dark-purple">logout</a>
+        
+        {% else %}
+        <a href='{% url "login" %}' class="dark-purple">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+        
+    </nav>
+    <a class="menu">&#x2630;</a>
+
+
+</header>
+
+<div class="overlay"></div>
+
+<script>
+    let menu = document.querySelector('.menu')
+    let navbar = document.querySelector('nav')
+
+    menu.addEventListener('click', ()=>{
+        navbar.classList.toggle('toggle-nav')
+    })
+</script>

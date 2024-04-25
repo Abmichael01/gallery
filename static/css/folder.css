@@ -1,0 +1,41 @@
+.action{
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action .back{
+    font-size: 20px;
+    color: #ff4500;
+}
+
+.action .delete{
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+    background-color: #32313A;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .action{
+        padding: 30px 10px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .action .back{
+        font-size: 20px;
+    }
+    
+    .action .delete{
+        font-size: 20px;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+}

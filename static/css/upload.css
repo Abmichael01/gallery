@@ -1,0 +1,100 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 5%;
+
+}
+
+.upload-file-cont, .create-folder-cont, .rename-cont{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 60%;
+}
+
+
+.upload-file-cont{
+    display:flex;
+}
+
+.info{
+    font-size: 20px;
+}
+
+h3{
+    font-size: 30px;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label{
+    font-size: 20px;
+}
+
+form input{
+
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+
+form select{
+    
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 2px solid black;
+    
+}
+
+form button, form a{
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+form a{
+    text-align: center;
+    background-color: #32313A;
+}
+
+form button:hover{
+    background-color: rgb(209, 59, 5);
+}
+
+.hidden{
+    display: none;
+}
+
+
+@media screen and (max-width: 700px) {
+    
+    .upload-file-cont, .create-folder-cont, .rename-cont{
+        width: 100%;
+    }
+ }
+
+ 

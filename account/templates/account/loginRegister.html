@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  Login Register
+{% endblock title %}
+
+{% block content %}
+
+<link rel="stylesheet" href='{% static "css/loginRegister.css" %}'>
+
+<div class="container">
+    {% if page == 'login' %}
+    <div class="login">
+      {% if messages %}
+        {% for message in messages %}
+        <p class="message">{{message}}</p>
+        {% endfor %}
+      {% endif %}
+      <h2>Login</h2>
+      <form action="" method="POST">
+        {% csrf_token %}
+
+        <div>
+          <label for="">Username</label>
+          <input type="text" name="username">
+        </div>
+
+        <div>
+          <label for="">Passowrd</label>
+          <input type="password" name="password">
+        </div>
+
+        <button type="submit">Login</button>
+
+        <div>
+          <p>Are you a new user?</p>
+          <a href='{% url "register" %}'>Register</a>
+        </div>
+      </form>
+    </div>
+
+    {% else %}
+    <div class="register">
+      <h2>Regsiter</h2>
+      <form action="" method="POST">
+        {% csrf_token %}
+
+        <div>
+          <label for="">Username</label>
+          <input type="text" name="username">
+        </div>
+
+        <div>
+          <label for="">Password</label>
+          <input type="password" name="password1">
+        </div>
+
+        <div>
+          <label for="">Retype Passowrd</label>
+          <input type="password" name="password2">
+        </div>
+        <button type="submit">Register</button>
+
+        <div>
+          <p>Are you an existing user?</p>
+          <a href='{% url "login" %}'>Login</a>
+        </div>
+      </form>
+    </div>
+    {% endif %}
+
+    
+</div>
+  
+{% endblock content %}

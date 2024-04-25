@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  Gallery
+{% endblock title %}
+
+{% block content %}
+
+<link rel="stylesheet" href='{% static "css/gallery.css" %}'>
+
+<div class="container">
+    <form class="search-cont">
+      <input type="search" class="search" placeholder="Search image tag or folder" name="q" value="{{request.GET.q}}">
+    </form>
+
+    <div class="main">
+      <div class="nav-bar">
+        <a href='{% url "gallery" %}' class="gal">Gallery</a>
+        <a href='{% url "folders" %}' class="fol">Folders</a>
+      </div>
+      <div class="display">
+        {% block container %}
+          
+        {% endblock container %}
+
+        <!-- {% block folders %}
+          
+        {% endblock folders %} -->
+      </div>
+    </div>
+
+    <script>
+    //   let galleryButt = document.querySelector('.gal')
+    //   let foldersButt = document.querySelector('.fol')
+
+    //   let gallery = document.querySelector('.gallery')
+    //   let folders = document.querySelector('.folders')
+
+    //   galleryButt.classList.add('active')
+
+    //   galleryButt.addEventListener('click', ()=>{
+    //     gallery.classList.remove('hide')
+    //     folders.classList.add('hide')
+    //     galleryButt.classList.add('active')
+    //     foldersButt.classList.remove('active')
+    //   })
+
+    //   foldersButt.addEventListener('click', ()=>{
+    //     gallery.classList.add('hide')
+    //     folders.classList.remove('hide')
+
+    //     galleryButt.classList.remove('active')
+    //     foldersButt.classList.add('active')
+    //   })
+
+    </script>
+</div>
+  
+{% endblock content %}

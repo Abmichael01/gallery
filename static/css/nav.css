@@ -1,0 +1,108 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 15px 5%;
+    color: orangered;
+    backdrop-filter: blur(20px);
+    z-index: 10000;
+}
+
+.logo{
+    color: orangered;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a{
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+    background-color: orangered;
+    border-radius: 20px;
+}
+
+nav a:hover{
+    background-color: rgb(197, 55, 3);
+}
+
+.dark-purple{
+    background-color: #32313A;
+}
+
+.dark-purple:hover{
+    background-color: #302d46;
+}
+
+.menu{
+    display: none;
+}
+
+
+
+nav p{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
+    display: none;
+}
+
+.hide{
+    display: hide;
+}
+
+
+@media screen and (max-width: 822px) {
+    
+   .toggle-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    width: 70%;
+    height: 100vh;
+    backdrop-filter: blur(20px);
+    border-left: 2px solid gray;
+    padding: 30px 10px;
+    background-color: black;
+    transition: all 1s;
+    
+    
+   }
+
+   nav{
+    display: none;
+    }
+
+    nav a{
+        width: 80%;
+    }
+
+   .menu{
+    display: block;
+    font-size: 30px;
+    color: orangered;
+    cursor: pointer;
+   }
+
+   
+
+}

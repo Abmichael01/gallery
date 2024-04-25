@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Create-Upload
+{% endblock title %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href='{% static "css/upload.css" %}'>
+
+<div class="container">
+    {% if page == 'create_folder' %}
+    <div class="create-folder-cont">
+      {% if not folders  %}
+      <p class="info">You have to create a folder before uploading images for easy orgnaization</p>
+      {% endif %}
+      
+      <h3>Create Folder</h3>
+      <form  method="POST">
+       {% csrf_token %}
+        <img src='{% static "images/folder.png" %}' alt="">
+
+        <div>
+          <label >File Name</label>
+          <input type="text" name="name" required>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    {% else %}
+    
+    <div class="upload-file-cont hide">
+      <h3>Upload Image</h3>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+          <label for="folder">Choose Folder</label>
+          <select name="folder" id="folder" required>
+            {% for folder in folders %}
+            <option value="{{folder.name}}">{{folder.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div>
+          <label for="image">Image</label>
+          <input type="file" name="image" id="image" class="file" required>
+          <!-- {{form.image}} -->
+        </div>
+
+        <div>
+          <label for="tag">Tag</label>
+          <input type="text" name="tag" id="tag" placeholder="Input a tag or name for easy reference" required>
+        </div>
+        <button type="submit">Upload Image</button>
+      </form>
+    </div>
+    {% endif %}
+</div>
+  
+{% endblock content %}

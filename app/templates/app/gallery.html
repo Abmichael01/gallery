@@ -1,0 +1,32 @@
+{% extends "app/galleryBase.html" %}
+
+{% load static %}
+
+{% block container %}
+{% if not image_exists %}
+<p class="no-image">Sorry you do not any image in your gallery <br> <a href="{% url 'upload' %}">+ Upload Image</a></p>
+{% endif %}
+
+{% if image_exists and images.count == 0 %}
+<p class="no-image">No result</p>
+{% endif %}
+
+
+
+<div class="gallery">
+  {% for image in images  %}
+  <a href="{% url 'image' image.id %}">
+    <div class="image">
+      <img src='{{image.image.url}}' alt="">
+      <p>{{image.tag}}</p>
+    </div>
+  </a>
+  {% endfor %}
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+{% endblock container %}
+
+
+

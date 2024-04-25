@@ -1,0 +1,24 @@
+{% extends "app/galleryBase.html" %}
+
+{% load static %}
+
+{% block container %}
+<link rel="stylesheet" href='{% static "css/imageDetail.css" %}'>
+<div class="image-cont">
+  <img src="{{image.image.url}}" alt="">
+  <div class="detail">
+    <p>{{image.tag}}</p>
+    <small>{{image.created}}</small>
+
+    <div class="actions">
+        <a class="download">Download</a>
+        <a href="{% url 'rename-image' image.pk %}" class="edit">Rename</a>
+        <a href="{% url 'delete-image' image.pk %}" class="delete">Delete</a>
+        <a href="{{request.META.HTTP_REFERER}}" class="delete">Back</a>
+    </div>
+  </div>
+</div>
+{% endblock container %}
+
+
+

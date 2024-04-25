@@ -1,0 +1,72 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login, .register{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+}
+
+.message{
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: rgb(196, 0, 0);
+    border-radius: 20px;
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label{
+    font-size: 20px;
+}
+
+form input{
+    font-size: 18px;
+    padding: 15px 10px;
+    width: 100%;
+    background-color: rgb(202, 202, 202);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+form button{
+    padding: 10px 0px;
+    font-size: 20px;
+    background-color: orangered;
+    border: none;
+    color: white;
+    width: 40%;
+    cursor: pointer;
+}
+
+form button:hover{
+    background-color: rgb(161, 48, 7);
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .login, .register{
+        width: 90%;
+    }    
+ 
+ }

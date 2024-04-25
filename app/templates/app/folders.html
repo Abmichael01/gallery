@@ -1,0 +1,23 @@
+{% extends "app/galleryBase.html" %}
+
+{% load static %}
+
+{% block container %}
+<div class="folders">
+    <a href="{% url 'create-folder' %}" class="new-folder">
+        <p>+</p>
+        <p>New Folder</p>
+    </a>
+    {% for folder in folders  %}
+    <a href="{% url 'folder' folder.id %}">
+      <div class="folder">
+      <img src='{% static "images/folder.png" %}' alt="">
+      <p>{{folder.name}}</p>
+    </div>
+  </a>
+    {% endfor %}
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+{% endblock container %}
