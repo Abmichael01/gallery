@@ -5,7 +5,7 @@ header{
     top: 0;
     right: 0;
     left: 0;
-    padding: 15px 5%;
+    padding: 10px 5%;
     color: orangered;
     backdrop-filter: blur(20px);
     z-index: 10000;
