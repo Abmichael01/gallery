@@ -14,6 +14,7 @@
     border-bottom: 2px solid gray;
 }
 
+
 .image-slide{
     height: 60%;
     width: 100%;
@@ -48,6 +49,7 @@
     font-size: 40px;
     color: #32313A;
     text-align: center;
+    font-weight: 600;
 }
 
 .info button{
